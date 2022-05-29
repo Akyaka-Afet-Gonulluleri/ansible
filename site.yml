@@ -1,0 +1,20 @@
+---
+- name: Install AAG Server
+  hosts: all
+  gather_facts: yes
+  vars:
+    dokku_hostname: "{{ ansible_default_ipv4.address }}.nip.io"
+  vars_prompt:
+    - name: TELEGRAM_TOKEN
+      private: yes
+      confirm: yes
+
+
+  pre_tasks:
+    - name: show dokku_hostname
+      debug:
+        var: dokku_hostname
+  roles:
+    - { role: common, tags: common }
+    - { role: dokku_bot.ansible_dokku, tags: dokku_install }
+    - { role: dokku_telegram_bot, tags: dokku_telegram_bot }

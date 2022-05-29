@@ -1,0 +1,11 @@
+---
+telegram_bot_app_name: telegram-etkilesim-bot
+telegram_bot_repo: https://github.com/Akyaka-Afet-Gonulluleri/telegram_etkilesim_bot.git
+
+#dokku vars
+dokku_hostname: 'change.me'
+dokku_plugins:
+    - name: clone
+      url: https://github.com/crisward/dokku-clone.git
+    - name: letsencrypt
+      url: https://github.com/dokku/dokku-letsencrypt.git

@@ -1,0 +1,5 @@
+all:
+  hosts:
+    x.x.x.x:
+  vars:
+    ansible_user: root
